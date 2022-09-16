@@ -6,7 +6,7 @@ name: 'tpc_ds_benchmark'
 version: '1.0.0'
 config-version: 2
 
-profile: 'fivetran_benchmark'
+profile: 'tpc_ds_benchmark'
 
 model-paths: ["models"]
 
@@ -15,9 +15,16 @@ clean-targets:         # directories to be removed by `dbt clean`
     - "target"
     - "dbt_modules"
 
+on-run-end: "{{ dbt_artifacts.upload_results(results) }}"
 
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
 models:
   tpc_ds_benchmark:
     +materialized: "{{ var('run_mode', 'query') }}" # Default to using the custom 'query' materialization which just runs the query. Can also be set to any other dbt materialization with e.g. dbt run --vars '{"run_mode": "table"}'
+  # dbt_artifacts:
+  #   # +schema: tfayyaz_demo # optional, default is your target schema
+  #   staging:
+  #     +schema: tfayyaz_x # optional, default is your target schema
+  #   sources:
+  #     +schema: tfayyaz_y # optional, default is your target schema
