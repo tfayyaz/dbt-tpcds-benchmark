@@ -6,5 +6,5 @@ tpc_ds_benchmark:
       method: http
       schema: "tfayyaz_demo"
       host: "{{ env_var('DBT_HOST') }}"
-      http_path: "sql/protocolv1/o/{{ env_var('DBT_ORG_ID') }}/0916-130704-ioa4jam7"
+      http_path: "sql/protocolv1/o/{{ env_var('DBT_ORG_ID') }}/0916-130235-jfnmvsvn"
       token: "{{ env_var('DBT_ACCESS_TOKEN') }}"
