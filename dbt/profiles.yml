@@ -1,10 +1,10 @@
 tpc_ds_benchmark:
-  target: databricks_job
-  outputs:
-    databricks_job:
+ target: databricks_job
+ outputs:
+   databricks_job:
     type: databricks
     method: http
     schema: "tfayyaz_demo"
-    host: "{{ env_var('DBT_CLUSTER_HTTP_HOST') }}"
-    http_path: "{{ env_var('DBT_CLUSTER_HTTP_PATH') }}"
+    host: "{{ env_var('DBT_HOST') }}"
+    http_path: "sql/protocolv1/o/{{ env_var('DBT_ORG_ID') }}/0916-130704-ioa4jam7"
     token: "{{ env_var('DBT_ACCESS_TOKEN') }}"
