@@ -2,9 +2,9 @@ version: 2
 
 sources:
   - name: src__tpc_ds
-    # database: "{{ var('dataset_database', target.database) }}" # Default location is the target's database, can be overridden with dataset_database variable
-    # schema: "{{ var('dataset_schema', target.schema) }}" # Default location is the target's schema, can be overridden with dataset_schema variable
-    schema: tpcds_sf1_delta
+    database: "{{ var('dataset_database', target.database) }}" # Default location is the target's database, can be overridden with dataset_database variable
+    schema: "{{ var('dataset_schema', target.schema) }}" # Default location is the target's schema, can be overridden with dataset_schema variable
+    # schema: "{{ var('tpcds_schema', 'tpcds_sf100_delta') }}"
     tables:
       - name: call_center
       - name: catalog_page

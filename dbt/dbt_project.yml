@@ -23,7 +23,7 @@ models:
   tpc_ds_benchmark:
     +materialized: "{{ var('run_mode', 'query') }}" # Default to using the custom 'query' materialization which just runs the query. Can also be set to any other dbt materialization with e.g. dbt run --vars '{"run_mode": "table"}'
   # dbt_artifacts:
-  #   # +schema: tfayyaz_demo # optional, default is your target schema
+  #   +schema: tfayyaz_demo # optional, default is your target schema
   #   staging:
   #     +schema: tfayyaz_x # optional, default is your target schema
   #   sources:
